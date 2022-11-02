@@ -107,6 +107,11 @@ public class Ventana extends javax.swing.JFrame {
         radioL.setText("radio");
 
         circuloB.setText("Calcular");
+        circuloB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                circuloBActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("el área del círculo es:");
 
@@ -155,6 +160,11 @@ public class Ventana extends javax.swing.JFrame {
         jLabel6.setText("altura");
 
         trianguloB.setText("Calcular");
+        trianguloB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trianguloBActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("el área del triángulo es:");
 
@@ -251,6 +261,22 @@ public class Ventana extends javax.swing.JFrame {
         double area = lado * lado;
         cuadradoTF.setText(area+"");
     }//GEN-LAST:event_cuadradoBActionPerformed
+
+    private void trianguloBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trianguloBActionPerformed
+        // TODO add your handling code here:
+        double area = Double.parseDouble(
+                baseTF.getText()) * Double.parseDouble(
+                        alturaTF.getText())/2.0;
+        trianguloTF.setText(area+"");
+        
+    }//GEN-LAST:event_trianguloBActionPerformed
+
+    private void circuloBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_circuloBActionPerformed
+        // TODO add your handling code here:
+        double area = Math.pow(
+                Double.parseDouble(radioTF.getText()),2) * Math.PI;
+        circuloTF.setText(area+"");
+    }//GEN-LAST:event_circuloBActionPerformed
 
     /**
      * @param args the command line arguments
